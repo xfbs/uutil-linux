@@ -1,0 +1,16 @@
+[package]
+name = "uu_resizepart"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+uucore = { workspace = true }
+clap = { workspace = true }
+libc = { workspace = true }
+
+[lib]
+path = "src/resizepart.rs"
+
+[[bin]]
+name = "resizepart"
+path = "src/main.rs"

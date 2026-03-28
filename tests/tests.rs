@@ -39,6 +39,10 @@ mod test_mountpoint;
 #[path = "by-util/test_nologin.rs"]
 mod test_nologin;
 
+#[cfg(feature = "addpart")]
+#[path = "by-util/test_addpart.rs"]
+mod test_addpart;
+
 #[cfg(feature = "blockdev")]
 #[path = "by-util/test_blockdev.rs"]
 mod test_blockdev;
@@ -51,9 +55,17 @@ mod test_cal;
 #[path = "by-util/test_ctrlaltdel.rs"]
 mod test_ctrlaltdel;
 
+#[cfg(feature = "delpart")]
+#[path = "by-util/test_delpart.rs"]
+mod test_delpart;
+
 #[cfg(feature = "renice")]
 #[path = "by-util/test_renice.rs"]
 mod test_renice;
+
+#[cfg(feature = "resizepart")]
+#[path = "by-util/test_resizepart.rs"]
+mod test_resizepart;
 
 #[cfg(feature = "rev")]
 #[path = "by-util/test_rev.rs"]

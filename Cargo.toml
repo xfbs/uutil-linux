@@ -26,10 +26,12 @@ default = ["feat_common_core"]
 uudoc = []
 
 feat_common_core = [
+  "addpart",
   "blockdev",
   "cal",
   "chcpu",
   "ctrlaltdel",
+  "delpart",
   "dmesg",
   "fsfreeze",
   "hexdump",
@@ -43,6 +45,7 @@ feat_common_core = [
   "mountpoint",
   "nologin",
   "renice",
+  "resizepart",
   "rev",
   "setpgid",
   "setsid",
@@ -94,10 +97,12 @@ textwrap = { workspace = true }
 uucore = { workspace = true }
 
 #
+addpart = { optional = true, version = "0.0.1", package = "uu_addpart", path = "src/uu/addpart" }
 blockdev = { optional = true, version = "0.0.1", package = "uu_blockdev", path = "src/uu/blockdev" }
 cal = { optional = true, version = "0.0.1", package = "uu_cal", path = "src/uu/cal" }
 chcpu = { optional = true, version = "0.0.1", package = "uu_chcpu", path = "src/uu/chcpu" }
 ctrlaltdel = { optional = true, version = "0.0.1", package = "uu_ctrlaltdel", path = "src/uu/ctrlaltdel" }
+delpart = { optional = true, version = "0.0.1", package = "uu_delpart", path = "src/uu/delpart" }
 dmesg = { optional = true, version = "0.0.1", package = "uu_dmesg", path = "src/uu/dmesg" }
 fsfreeze = { optional = true, version = "0.0.1", package = "uu_fsfreeze", path = "src/uu/fsfreeze" }
 hexdump = { optional = true, version = "0.0.1", package = "uu_hexdump", path = "src/uu/hexdump" }
@@ -111,6 +116,7 @@ mesg = { optional = true, version = "0.0.1", package = "uu_mesg", path = "src/uu
 mountpoint = { optional = true, version = "0.0.1", package = "uu_mountpoint", path = "src/uu/mountpoint" }
 nologin = { optional = true, version = "0.0.1", package = "uu_nologin", path = "src/uu/nologin" }
 renice = { optional = true, version = "0.0.1", package = "uu_renice", path = "src/uu/renice" }
+resizepart = { optional = true, version = "0.0.1", package = "uu_resizepart", path = "src/uu/resizepart" }
 rev = { optional = true, version = "0.0.1", package = "uu_rev", path = "src/uu/rev" }
 setpgid = { optional = true, version = "0.0.1", package = "uu_setpgid", path = "src/uu/setpgid" }
 setsid = { optional = true, version = "0.0.1", package = "uu_setsid", path ="src/uu/setsid" }

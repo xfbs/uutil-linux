@@ -1497,10 +1497,12 @@ dependencies = [
  "serde_json",
  "tempfile",
  "textwrap",
+ "uu_addpart",
  "uu_blockdev",
  "uu_cal",
  "uu_chcpu",
  "uu_ctrlaltdel",
+ "uu_delpart",
  "uu_dmesg",
  "uu_fsfreeze",
  "uu_hexdump",
@@ -1514,6 +1516,7 @@ dependencies = [
  "uu_mountpoint",
  "uu_nologin",
  "uu_renice",
+ "uu_resizepart",
  "uu_rev",
  "uu_setpgid",
  "uu_setsid",
@@ -1522,6 +1525,15 @@ dependencies = [
  "uuid",
  "uutests",
  "xattr",
+]
+
+[[package]]
+name = "uu_addpart"
+version = "0.0.1"
+dependencies = [
+ "clap",
+ "libc",
+ "uucore 0.2.2",
 ]
 
 [[package]]
@@ -1561,6 +1573,15 @@ name = "uu_ctrlaltdel"
 version = "0.0.1"
 dependencies = [
  "clap",
+ "uucore 0.2.2",
+]
+
+[[package]]
+name = "uu_delpart"
+version = "0.0.1"
+dependencies = [
+ "clap",
+ "libc",
  "uucore 0.2.2",
 ]
 
@@ -1687,6 +1708,15 @@ dependencies = [
 
 [[package]]
 name = "uu_renice"
+version = "0.0.1"
+dependencies = [
+ "clap",
+ "libc",
+ "uucore 0.2.2",
+]
+
+[[package]]
+name = "uu_resizepart"
 version = "0.0.1"
 dependencies = [
  "clap",
