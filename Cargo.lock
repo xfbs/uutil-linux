@@ -1504,6 +1504,7 @@ dependencies = [
  "uu_dmesg",
  "uu_fsfreeze",
  "uu_hexdump",
+ "uu_ionice",
  "uu_last",
  "uu_lscpu",
  "uu_lsipc",
@@ -1593,6 +1594,15 @@ name = "uu_hexdump"
 version = "0.0.1"
 dependencies = [
  "clap",
+ "uucore 0.2.2",
+]
+
+[[package]]
+name = "uu_ionice"
+version = "0.0.1"
+dependencies = [
+ "clap",
+ "libc",
  "uucore 0.2.2",
 ]
 

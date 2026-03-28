@@ -83,6 +83,10 @@ mod test_fsfreeze;
 #[path = "by-util/test_hexdump.rs"]
 mod test_hexdump;
 
+#[cfg(feature = "ionice")]
+#[path = "by-util/test_ionice.rs"]
+mod test_ionice;
+
 #[cfg(feature = "mcookie")]
 #[path = "by-util/test_mcookie.rs"]
 mod test_mcookie;
