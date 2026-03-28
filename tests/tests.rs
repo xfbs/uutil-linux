@@ -47,6 +47,10 @@ mod test_blockdev;
 #[path = "by-util/test_cal.rs"]
 mod test_cal;
 
+#[cfg(feature = "chrt")]
+#[path = "by-util/test_chrt.rs"]
+mod test_chrt;
+
 #[cfg(feature = "ctrlaltdel")]
 #[path = "by-util/test_ctrlaltdel.rs"]
 mod test_ctrlaltdel;
