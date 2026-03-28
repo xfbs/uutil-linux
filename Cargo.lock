@@ -1503,6 +1503,7 @@ dependencies = [
  "uu_ctrlaltdel",
  "uu_dmesg",
  "uu_fsfreeze",
+ "uu_fstrim",
  "uu_hexdump",
  "uu_last",
  "uu_lscpu",
@@ -1585,6 +1586,15 @@ dependencies = [
  "linux-raw-sys",
  "regex",
  "sysinfo",
+ "uucore 0.2.2",
+]
+
+[[package]]
+name = "uu_fstrim"
+version = "0.0.1"
+dependencies = [
+ "clap",
+ "libc",
  "uucore 0.2.2",
 ]
 

@@ -1,0 +1,16 @@
+[package]
+name = "uu_fstrim"
+version = "0.0.1"
+edition = "2021"
+
+[dependencies]
+uucore = { workspace = true, features = ["parser"] }
+clap = { workspace = true }
+libc = { workspace = true }
+
+[lib]
+path = "src/fstrim.rs"
+
+[[bin]]
+name = "fstrim"
+path = "src/main.rs"
