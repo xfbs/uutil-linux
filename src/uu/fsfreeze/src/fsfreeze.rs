@@ -30,7 +30,9 @@ pub fn uumain(args: impl uucore::Args) -> UResult<()> {
         ("unfreeze", linux_raw_sys::ioctl::FITHAW)
     };
 
-    if unsafe { libc::ioctl(file.as_raw_fd(), op_code.into(), 0) } < 0 {
+    // `as _` is needed because libc::ioctl's request arg is c_ulong on glibc but c_int
+    // on musl. The ioctl codes fit in both types, so the cast is lossless in practice.
+    if unsafe { libc::ioctl(file.as_raw_fd(), op_code as _, 0) } < 0 {
         uucore::show_error!(
             "failed to {} the filesystem: {}",
             op_name,

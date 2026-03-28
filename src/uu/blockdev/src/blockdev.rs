@@ -198,8 +198,10 @@ mod linux {
     use std::{io::Read, os::unix::fs::MetadataExt, path::Path};
     use uucore::{error::UIoError, libc};
 
+    // `as _` is needed because libc::ioctl's request arg is c_ulong on glibc but c_int
+    // on musl. The ioctl codes fit in both types, so the cast is lossless in practice.
     unsafe fn uu_ioctl<T>(device_file: &File, ioctl_code: u32, input: T) -> UResult<()> {
-        if libc::ioctl(device_file.as_raw_fd(), ioctl_code.into(), input) < 0 {
+        if libc::ioctl(device_file.as_raw_fd(), ioctl_code as _, input) < 0 {
             Err(Box::new(UIoError::from(io::Error::last_os_error())))
         } else {
             Ok(())

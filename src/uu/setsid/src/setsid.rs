@@ -56,12 +56,9 @@ mod unix {
         // here should be impossible.
         assert_eq!(pid, process::id() as i32);
 
-        // On some platforms (i.e. aarch64 Linux) TIOCSCTTY is the same type as the second argument,
-        // but on some it is u64, while the expected type is u32.
-        // SAFETY: the ioctl should not make any changes to memory, basically a wrapper
-        // to the syscall.
-        #[allow(clippy::useless_conversion)]
-        if take_controlling_tty && unsafe { libc::ioctl(0, libc::TIOCSCTTY.into(), 1) } < 0 {
+        // `as _` is needed because libc::ioctl's request arg is c_ulong on glibc but
+        // c_int on musl. TIOCSCTTY fits in both types, so the cast is lossless.
+        if take_controlling_tty && unsafe { libc::ioctl(0, libc::TIOCSCTTY as _, 1) } < 0 {
             // This is unfortunate, but we are bound by the Result type pre_exec requires,
             // as well as the limitations imposed by this being executed post-fork().
             // Ideally we would return an io::Error of the Other kind so that we could handle
